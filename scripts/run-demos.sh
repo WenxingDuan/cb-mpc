@@ -78,5 +78,4 @@ while [[ $# -gt 0 ]]; do
     ;;
   esac
 done
-
 set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
