@@ -3,12 +3,11 @@ set -e
 cd /tmp
 curl -L https://github.com/openssl/openssl/releases/download/openssl-3.2.0/openssl-3.2.0.tar.gz --output openssl-3.2.0.tar.gz
 expectedHash='14c826f07c7e433706fb5c69fa9e25dab95684844b4c962a2cf1bf183eb4690e'
-fileHash=$(sha256sum openssl-3.2.0.tar.gz | cut -d " " -f 1 )
+fileHash=$(shasum -a 256 openssl-3.2.0.tar.gz | cut -d " " -f 1)
 
 
-if [ $expectedHash != $fileHash ]
-then
-  echo 'ERROR: SHA1 DOES NOT MATCH!'
+if [ "$expectedHash" != "$fileHash" ]; then
+  echo 'ERROR: SHA256 DOES NOT MATCH!'
   echo 'expected: ' $expectedHash
   echo 'file:     ' $fileHash
   exit 1

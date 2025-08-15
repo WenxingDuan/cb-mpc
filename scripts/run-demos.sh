@@ -11,7 +11,7 @@ ROOT_PATH="${SCRIPT_PATH}/.."
 DEMOS_CPP_DIR="${ROOT_PATH}/demos-cpp"
 DEMOS_GO_DIR="${ROOT_PATH}/demos-go/examples"
 
-CPP_DEMOS=("basic_primitive"  "zk")
+CPP_DEMOS=("basic_primitive" "tdh2" "zk")
 GO_DEMOS=("access-structure" "agreerandom" "ecdsa-2pc" "ecdsa-mpc-with-backup" "zk")
 
 clean() {
